@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B10NEWS Ticker Tool</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mandali&family=Ramabhadra&family=Mallanna&family=Tenali+Ramakrishna&family=Gidugu&family=Ramaraja&family=Sree+Krushnadevaraya&family=Suravaram&family=Ponnala&family=NTR&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="ticker-container">
+        <div id="ticker-bar">
+            <span id="ticker-text">B10NEWS కి స్వాగతం. ఇది తాజా వార్తల స్క్రోలింగ్ టిక్కర్...</span>
+        </div>
+    </div>
+
+    <div class="controls">
+        <h2>Ticker Controls</h2>
+
+        <div class="control-group">
+            <label>తెలుగు ఫాంట్ (Select Font):</label>
+            <select id="font-select">
+                <option value="sans-serif">డిఫాల్ట్ (Default)</option>
+                <option value="Mandali">మండలి (Mandali)</option>
+                <option value="Ramabhadra">రామభద్ర (Ramabhadra)</option>
+                <option value="Mallanna">మల్లన్న (Mallanna)</option>
+                <option value="Tenali Ramakrishna">తెనాలి రామకృష్ణ (Tenali Ramakrishna)</option>
+                <option value="Gidugu">గిడుగు (Gidugu)</option>
+                <option value="Ramaraja">రామరాజ (Ramaraja)</option>
+                <option value="Sree Krushnadevaraya">శ్రీకృష్ణదేవరాయ (Sree Krushnadevaraya)</option>
+                <option value="Suravaram">సురవరం (Suravaram)</option>
+                <option value="Ponnala">పొన్నాల (Ponnala)</option>
+                <option value="NTR">ఎన్టీఆర్ (NTR)</option>
+            </select>
+        </div>
+
+        <div class="control-group">
+            <label>తెలుగు వార్తలు (Telugu News Text):</label>
+            <textarea id="text-input" rows="3">B10NEWS కి స్వాగతం. ఇది తాజా వార్తల స్క్రోలింగ్ టిక్కర్...</textarea>
+        </div>
+
+        <div class="control-group">
+            <label>అక్షరాల సైజు (Font Size): <span id="font-size-display">40px</span></label>
+            <input type="range" id="font-size-slider" min="20" max="100" value="40">
+        </div>
+
+        <div class="control-group">
+            <label>టెక్స్ట్ పైకి/కిందికి (Vertical Alignment): <span id="vertical-offset-display">0px</span></label>
+            <input type="range" id="vertical-offset-slider" min="-50" max="50" value="0">
+        </div>
+
+        <div class="control-group">
+            <label>టిక్కర్ బార్ ఎత్తు (Bar Height): <span id="ticker-height-display">80px</span></label>
+            <input type="range" id="ticker-height-slider" min="40" max="200" value="80">
+        </div>
+
+        <div class="control-group">
+            <label>స్క్రోలింగ్ వేగం (Speed): <span id="speed-display">15s</span></label>
+            <input type="range" id="speed-slider" min="5" max="60" value="15">
+        </div>
+
+        <div class="control-group">
+            <label>బ్యాక్‌గ్రౌండ్ రంగు (Background Color):</label>
+            <input type="color" id="color-picker" value="#ff0000">
+        </div>
+
+        <div class="control-group">
+            <label>అక్షరాల రంగు (Font Color):</label>
+            <input type="color" id="font-color-picker" value="#ffffff">
+        </div>
+
+        <div class="control-group action-buttons">
+            <button class="export-btn" id="export-btn">🎬 Export as WebM Video</button>
+        </div>
+
+        <p class="status-msg" id="status-msg"></p>
+    </div>
+
+    <canvas id="export-canvas" width="1920" style="display:none;"></canvas>
+
+    <script src="script.js"></script>
+</body>
+</html>
